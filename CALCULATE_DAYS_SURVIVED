@@ -1,0 +1,12 @@
+from datetime import datetime, timedelta
+
+def calculate_days_survived(dob, current_date):
+    dob = datetime.strptime(dob, '%Y-%m-%d')
+    current_date = datetime.strptime(current_date, '%Y-%m-%d')
+    days_survived = current_date - dob
+    return int(days_survived.days)
+
+dob = input('Enter your date of birth (YYYY-MM-DD): ')
+current_date = input('Enter the current date (YYYY-MM-DD): ')
+days_survived = calculate_days_survived(dob ,  current_date)
+print(f'You have survived for {days_survived} days.')
